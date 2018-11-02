@@ -90,13 +90,17 @@ def roulette (money, num_times):
 def main():
     money = 100
     while money > 0:
-        if money >= 4 and money < 10:
+        if money >= 4 and money < 8:
             print("You can only afford to play one game of Slots")
             pick_game = input("Enter 'y' if you would like to play slots: ")
             if pick_game == 'y':
                 money = slots (money, 1)
             else:
                 break
+        elif money >=8 and money < 10:
+            print("You can only afford to play Slots")
+            num_times = int(input("Select how many times you would like to play slots, 1 or 2: "))
+            money = slots (money, num_times)
         elif money >= 10:
             print("Your current balance is $" + str(money), "1. Slots", "2. Roulette", sep='\n' )
             pick_game = input("Please select your choice above or select any other key to exit: ")
