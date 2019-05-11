@@ -3,10 +3,10 @@ from time import sleep
 
 class Purse (object):
 
-    def __init__(self, name, colour):
+    def __init__(self, name, colour, money):
         self.name = name
         self.colour = colour
-        self.money = 0.0
+        self.money = money
         self.misc_items = []
 
     def add_money(self):
@@ -46,43 +46,3 @@ class Purse (object):
         print(self.colour)
         print(self.money)
         print(self.misc_items)
-def main():
-    name = input("What's your name? ")
-    colour = input("What the colour of your purse? ")
-    purse1 = Purse(name, colour)
-    while True:
-        print("Hi", purse1.get_name())
-        print("What would you like to do with your purse? ")
-        print("1. Add Money", "2. Remove Money", "3. Add Items", "4. Remove items", "5. Leave", sep = "\n")
-        choice = int(input("Enter choice here: "))
-        if choice == 1:
-            purse1.add_money()
-            sleep(1)
-            purse1.contents()
-            sleep(1)
-        elif choice == 2:
-            purse1.remove_money()
-            sleep(1)
-            purse1.contents()
-            sleep(1)
-        elif choice == 3:
-            purse1.add_items()
-            sleep(1)
-            purse1.contents()
-            sleep(1)
-        elif choice == 4:
-            purse1.remove_items()
-            sleep(1)
-            purse1.contents()
-            sleep(1)
-        elif choice == 5:
-            print("Goodbye")
-            break
-        else:
-            print("Invalid Option, Try Again")
-            sleep(1)
-            purse1.contents()
-            sleep(1)
-
-
-main()
